@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.calculator {
+  background: linear-gradient(191.34deg, #17181a -4.95%, #17181a 103.74%);
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.circle {
+  position: absolute;
+  width: 218px;
+  height: 218px;
+  right: 0px;
+  top: -100px;
+  background: #24a5ff;
+  filter: blur(101px);
+  border-radius: 50%;
+}
+
+.display {
+  position: relative;
+}
+
+.display .text {
+  position: absolute;
+  bottom: 50px;
+  right: 25px;
+}
+
+.display .question {
+  font-family: "Poppins";
+  font-size: 24px;
+  line-height: 36px;
+  color: #818181;
+}
+
+.display .question .operator {
+  color: #109dff;
+  margin: 0px 10px;
+}
+
+.display .answer {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 72px;
+  color: #ffffff;
+}
+
+.basic-functions {
+  grid-area: 1 / 2 / 3 / 3;
+  padding: 20px 20px 20px 0px;
+}
+
+.basic-functions .keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  color: white;
+  grid-gap: 15px;
+  height: 100%;
+}
+
+.basic-functions .keys > div,
+.extra-functions .keys > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.basic-functions .keys .minus,
+.basic-functions .keys .plus,
+.basic-functions .keys .multiply,
+.basic-functions .keys .divide {
+  background: #005db2;
+  border-radius: 16px;
+  color: #339dff;
+  font-size: 32px;
+}
+
+.basic-functions .keys .ac,
+.basic-functions .keys .backspace {
+  background: #616161;
+  border-radius: 16px;
+  font-family: "Poppins";
+  font-size: 24px;
+  line-height: 36px;
+  color: #a5a5a5;
+}
+
+.basic-functions .keys .equal {
+  background: #1991ff;
+  border-radius: 12px;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  color: #b2daff;
+}
+
+.basic-functions .keys .one,
+.basic-functions .keys .two,
+.basic-functions .keys .three,
+.basic-functions .keys .four,
+.basic-functions .keys .five,
+.basic-functions .keys .six,
+.basic-functions .keys .seven,
+.basic-functions .keys .eight,
+.basic-functions .keys .nine,
+.basic-functions .keys .zero,
+.basic-functions .keys .period {
+  background: #303136;
+  border-radius: 16px;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  color: #29a8ff;
+}
+
+.basic-functions .keys .four {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.basic-functions .keys .five {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.basic-functions .keys .six {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.basic-functions .keys .one {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+.basic-functions .keys .two {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
+.basic-functions .keys .three {
+  grid-area: 4 / 3 / 5 / 4;
+}
+
+.basic-functions .keys .zero {
+  grid-area: 5 / 1 / 6 / 3;
+}
+
+.basic-functions .keys .period {
+  grid-area: 5 / 3 / 6 / 4;
+}
+
+.basic-functions .keys .minus {
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.basic-functions .keys .plus {
+  grid-area: 3 / 4 / 4 / 5;
+}
+
+.basic-functions .keys .equal {
+  grid-area: 4 / 4 / 6 / 5;
+}
+
+.extra-functions {
+  padding: 20px;
+}
+
+.extra-functions .keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+  height: 100%;
+}
+
+.extra-functions .keys > div {
+  background: #303136;
+  border-radius: 16px;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  color: #29a8ff;
+}
+
+@media screen and (max-width: 730px) {
+  .calculator {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    display: block;
+  }
+
+  .display .text,
+  .display .question {
+    position: static;
+  }
+
+  .display {
+    padding: 40px;
+  }
+
+  .basic-functions {
+    grid-area: auto;
+    padding: 0px 20px;
+  }
+
+  .basic-functions .keys > div {
+    padding: 10px;
+  }
+
+  .extra-functions .keys > div {
+    padding: 10px;
+  }
+}
